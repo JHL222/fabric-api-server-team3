@@ -10,4 +10,12 @@ export class AppController {
   root() {
     return this.appService.getHello();
   }
+
+  @Get('/init')
+  async init(
+    @Query('user') user:String,
+    @Query('userVal') userVal: String,
+  ): Promise<string>{
+    return this.appService.init(user, userVal);
+  }
 }
